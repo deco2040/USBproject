@@ -1,6 +1,6 @@
 -- 유저생성은 관리자 계정에서 실행 할 것!!
-create user usbpjoject IDENTIFIED by 1234;
-grant connect,dba,resource to usbpjoject;
+create user usbpoject IDENTIFIED by 1234;
+grant connect,dba,resource to usbpoject;
 
 
 create table JPTquestion(
