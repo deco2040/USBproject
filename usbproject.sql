@@ -52,3 +52,13 @@ create table JPTchoiceINFO(
     CONSTRAINT FK_QIDX FOREIGN KEY(qidx) 
     REFERENCES JPTquestion(qidx)
 );
+
+insert into week values(01,'어휘력');
+insert into week values(02,'숙어력');
+insert into week values(03,'속담력');
+insert into week values(04,'한자력');
+insert into week values(05,'문법력');
+insert into week values(06,'독해력');
+insert into week values(07,'정보력');
+insert into week values(08,'문장력');
+
