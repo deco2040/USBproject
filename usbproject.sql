@@ -1,0 +1,54 @@
+-- 유저생성은 관리자 계정에서 실행 할 것!!
+create user usbpjoject IDENTIFIED by 1234;
+grant connect,dba,resource to usbpjoject;
+
+
+create table JPTquestion(
+    qidx number PRIMARY KEY not null,
+    part number not null,
+    question varchar2(1000) not null,
+    choice varchar2(100),
+    answer varchar2(2) not null,
+    commentary varchar2(100),
+    difficulty number,
+    weekpoint number,
+    favorites number default 0,
+    responses number default 0,
+    CONSTRAINT FK_WEEK FOREIGN KEY(weekpoint)
+    REFERENCES Week(weekID)
+);
+create sequence jpt_qidx_seq;
+
+create table Week(
+    weekID number PRIMARY KEY,
+    weekpoint varchar2(20) not null
+);
+
+create table memberINFO(
+    idx number PRIMARY KEY,
+    memberid varchar2(20) UNIQUE,
+    name varchar2(20) not null,
+    birth varchar2(13) not null,
+    gender varchar2(3),
+    password varchar2(30) not null,
+    address1 varchar2(100) not null,
+    address2 varchar2(100) not null,
+    email varchar2(150) not null,
+    tel varchar2(20)
+);
+create sequence member_seq;
+
+create table JPTchoiceINFO(
+    qidx number default 0,
+    answerA number default 0, --각 선택항목을 선택한 사람 수
+    answerB number default 0,
+    answerC number default 0,
+    answerD number default 0,
+    incorrectA number default 0,  -- 각 항목을 선택해서 틀린 사람 수
+    incorrectB number default 0,
+    incorrectC number default 0,
+    incorrectD number default 0,
+    responses number default 0,
+    CONSTRAINT FK_QIDX FOREIGN KEY(qidx) 
+    REFERENCES JPTquestion(qidx)
+);
