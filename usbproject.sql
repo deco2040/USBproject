@@ -10,8 +10,8 @@ create table JPTquestion(
     choice varchar2(100),
     answer varchar2(2) not null,
     commentary varchar2(100),
-    difficulty number,
-    weekpoint number,
+    difficulty number not null,
+    weekpoint number not null,
     favorites number default 0,
     responses number default 0,
     CONSTRAINT FK_WEEK FOREIGN KEY(weekpoint)
@@ -26,7 +26,7 @@ create table Week(
 
 create table memberINFO(
     idx number PRIMARY KEY,
-    memberid varchar2(20) UNIQUE,
+    memberid varchar2(20) UNIQUE not null,
     name varchar2(20) not null,
     birth varchar2(13) not null,
     gender varchar2(3),
