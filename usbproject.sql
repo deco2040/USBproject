@@ -34,7 +34,9 @@ create table memberINFO(
     address1 varchar2(100) not null,
     address2 varchar2(100) not null,
     email varchar2(150) not null,
-    tel varchar2(20)
+    tel varchar2(20),
+    CONSTRAINT fk_member_week FOREIGN KEY(idx)
+    REFERENCES MemberWeekINFO(idx)
 );
 create sequence member_seq;
 
@@ -62,3 +64,17 @@ insert into week values(06,'독해력');
 insert into week values(07,'정보력');
 insert into week values(08,'문장력');
 
+create table MemberWeekINFO(
+    idx number not null,
+    memberid varchar2(20) not null,
+    voca number default 0,
+    idiom number default 0,
+    proverb number default 0,
+    grammer number default 0,
+    reading number default 0,
+    info number default 0,
+    kanji number default 0,
+    sentence number default 0,
+    totcorrect number default 0,
+    totincorrect number default 0
+);
