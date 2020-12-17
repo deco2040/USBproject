@@ -75,7 +75,7 @@ create table slovedquestion(
     memberid varchar2(20) unique,
     correctquestions varchar2(1000),
     incorrectquestions varchar2(1000),
-    favorite varchar2(1000)
+    favorite varchar2(1000),
     CONSTRAINT FK_IDXS FOREIGN KEY(idx) 
     REFERENCES memberINFO(idx)
 );
