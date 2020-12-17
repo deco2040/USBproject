@@ -4,7 +4,7 @@ grant connect,dba,resource to usbpoject;
 
 
 create table JPTquestion(
-    qidx number PRIMARY KEY not null,
+    qidx number PRIMARY KEY,
     part number not null,
     question varchar2(1000) not null,
     choice varchar2(100),
@@ -25,7 +25,7 @@ create table Week(
 );
 
 create table MemberWeekINFO(
-    idx number not null,
+    idx number PRIMARY KEY,
     memberid varchar2(20) not null,
     voca number default 0,
     idiom number default 0,
@@ -56,7 +56,7 @@ create table memberINFO(
 create sequence member_seq;
 
 create table JPTchoiceINFO(
-    qidx number default 0,
+    qidx number PRIMARY KEY,
     answerA number default 0, --각 선택항목을 선택한 사람 수
     answerB number default 0,
     answerC number default 0,
@@ -69,6 +69,17 @@ create table JPTchoiceINFO(
     CONSTRAINT FK_QIDX FOREIGN KEY(qidx) 
     REFERENCES JPTquestion(qidx)
 );
+
+create table slovedquestion(
+    idx number primary key,
+    memberid varchar2(20) unique,
+    correctquestions varchar2(1000),
+    incorrectquestions varchar2(1000),
+    favorite varchar2(1000)
+    CONSTRAINT FK_IDXS FOREIGN KEY(idx) 
+    REFERENCES memberINFO(idx)
+);
+
 
 insert into week values(01,'어휘력');
 insert into week values(02,'숙어력');
