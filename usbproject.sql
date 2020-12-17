@@ -24,6 +24,21 @@ create table Week(
     weekpoint varchar2(20) not null
 );
 
+create table MemberWeekINFO(
+    idx number not null,
+    memberid varchar2(20) not null,
+    voca number default 0,
+    idiom number default 0,
+    proverb number default 0,
+    grammer number default 0,
+    reading number default 0,
+    info number default 0,
+    kanji number default 0,
+    sentence number default 0,
+    totcorrect number default 0,
+    totincorrect number default 0
+);
+
 create table memberINFO(
     idx number PRIMARY KEY,
     memberid varchar2(20) UNIQUE not null,
@@ -64,17 +79,4 @@ insert into week values(06,'독해력');
 insert into week values(07,'정보력');
 insert into week values(08,'문장력');
 
-create table MemberWeekINFO(
-    idx number not null,
-    memberid varchar2(20) not null,
-    voca number default 0,
-    idiom number default 0,
-    proverb number default 0,
-    grammer number default 0,
-    reading number default 0,
-    info number default 0,
-    kanji number default 0,
-    sentence number default 0,
-    totcorrect number default 0,
-    totincorrect number default 0
-);
+
