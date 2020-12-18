@@ -26,7 +26,7 @@ create table Week(
 
 create table MemberWeekINFO(
     idx number PRIMARY KEY,
-    memberid varchar2(20) not null,
+    email varchar2(150) UNIQUE not null,
     voca number default 0,
     idiom number default 0,
     proverb number default 0,
@@ -41,14 +41,11 @@ create table MemberWeekINFO(
 
 create table memberINFO(
     idx number PRIMARY KEY,
-    memberid varchar2(20) UNIQUE not null,
-    name varchar2(20) not null,
-    birth varchar2(13) not null,
+    email varchar2(150) UNIQUE not null,
     gender varchar2(3),
     password varchar2(30) not null,
     address1 varchar2(100) not null,
     address2 varchar2(100) not null,
-    email varchar2(150) not null,
     tel varchar2(20),
     CONSTRAINT fk_member_week FOREIGN KEY(idx)
     REFERENCES MemberWeekINFO(idx)
@@ -72,7 +69,7 @@ create table JPTchoiceINFO(
 
 create table slovedquestion(
     idx number primary key,
-    memberid varchar2(20) unique,
+    email varchar2(150) not null unique,
     correctquestions varchar2(1000),
     incorrectquestions varchar2(1000),
     favorite varchar2(1000),
