@@ -1,5 +1,5 @@
 # USBproject  
-#### jsl 45, usb team project  
+#### **jsl 45, usb team project, JPTflog**  
 
 - __일정표 확인 필수__   
 - 작업이 끝나면 __커밋은 그때 그때필수__, 자기가 한 작업물은 모두가 볼 수 있도록  
