@@ -36,7 +36,9 @@ create table MemberWeekINFO(
     kanji number default 0,
     sentence number default 0,
     totcorrect number default 0,
-    totincorrect number default 0
+    totincorrect number default 0,
+    CONSTRAINT fk_member_week FOREIGN KEY(idx)
+    REFERENCES memberINFO(idx)
 );
 
 create table memberINFO(
@@ -46,9 +48,7 @@ create table memberINFO(
     password varchar2(30) not null,
     address1 varchar2(100) not null,
     address2 varchar2(100) not null,
-    tel varchar2(20),
-    CONSTRAINT fk_member_week FOREIGN KEY(idx)
-    REFERENCES MemberWeekINFO(idx)
+    tel varchar2(20)
 );
 create sequence member_seq;
 
