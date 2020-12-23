@@ -22,7 +22,7 @@
     		    이메일 인증을 완료해야 정상적인 서비스 이용이 가능합니다.
     		    <form target="_blank" action="" class="mt-3">
     		        <div class="text-right my-3">
-    		            <button type="button" class="btn btn-lg btn-primary btn-block" >처음 화면으로 돌아가기</button>
+    		            <button type="button" class="btn btn-lg btn-primary btn-block" onclick="location.href = 'user_login.jsp'">처음 화면으로 돌아가기</button>
     		        </div>
     		    </form>
     		</div>

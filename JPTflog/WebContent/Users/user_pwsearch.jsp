@@ -19,7 +19,7 @@
     		</div>
     		<div class="col-md-9" style="padding-top:100px">
     		    <h2 class="font-weight-light">비밀번호를 잊으셨나요?</h2>
-    		    이메일 주소를 입력하면 비밀번호 재설정을 하실 수 있습니다.
+    		    이메일 주소를 입력해서 비밀번호를 재설정 할 수 있습니다.
     		    <form target="_blank" action="https://www.samacharvideo.com" class="mt-3">
     		        <input class="form-control form-control-lg" type="email" placeholder="이메일 주소를 입력해주세요">
     		        

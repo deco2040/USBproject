@@ -7,16 +7,8 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head> 
-<script>
-// 정규표현식을 정의합니다.
-function email_check( email ) {
-    
-    var regex=/([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-    return (email != '' && email != 'undefined' && regex.test(email));
+<head> 
 
-}
-</script>
 
     <script src="https://kit.fontawesome.com/c0da795b31.js" crossorigin="anonymous"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,7 +30,7 @@ function email_check( email ) {
 		<div class="container">
 			<div class="row main">
 				<div class="main-login main-center">
-					<form class="" method="post" action="#">
+					<form class="" id="regform" method="post" action="#">
 					<h1 class="text-center">회원가입</h1>
 						
 						<div class="form-group">
@@ -46,30 +38,31 @@ function email_check( email ) {
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="email" class="form-control" name="email" id="email"  placeholder="ex)angryfrog@gmail.com"/>
+									<input type="text" class="form-control" name="useremail" id="email"  placeholder="ex)angryfrog@gmail.com"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label" for="pwd">비밀번호</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" class="form-control" name="passwd" id="pwd"  placeholder="최대 oo자까지 입력가능" required/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="password" class="cols-sm-2 control-label">비밀번호</label>
+							<label for="confirm" class="cols-sm-2 control-label" for="repwd">비밀번호 확인</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="최대 oo자까지 입력가능"/>
+									<input type="password" class="form-control" name="repasswd" id="repwd"  placeholder="비밀번호를 다시 입력해주세요" required/><br>
 								</div>
 							</div>
 						</div>
-
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">비밀번호 확인</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="비밀번호를 다시 입력해주세요"/>
-								</div>
-							</div>
-						</div>
+						<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div> 
+						<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
 						
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">전화번호</label>
@@ -84,13 +77,13 @@ function email_check( email ) {
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">주소</label><br>
 							<body>
-								<input type="text" id="sample4_postcode" placeholder="우편번호">
 								<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-								<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-								<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+								<input type="text" size=15 id="sample4_postcode" placeholder="우편번호">
+								<input type="text" size=30 id="sample4_roadAddress" placeholder="도로명주소">
+								<input type="text" size=30 id="sample4_jibunAddress" placeholder="지번주소">
 								<span id="guide" style="color:#999;display:none"></span>
-								<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-								<input type="text" id="sample4_extraAddress" placeholder="참고항목">
+								<input type="text" size=30 id="sample4_detailAddress" placeholder="상세주소">
+								<input type="text" size=15 id="sample4_extraAddress" placeholder="참고항목">
 								
 								<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 								<script>
@@ -162,7 +155,28 @@ function email_check( email ) {
 						<div class="form-group ">
 							<label  type="submit" id="button" class="btn btn-primary btn-lg btn-block login-button">회원가입</label>
 						</div>
-						
+						<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+						<script type="text/javascript">
+						$(function(){
+							$("#alert-success").hide();
+							$("#alert-danger").hide();
+							$("input").keyup(function(){
+								var pwd=$("#pwd").val();
+								var repwd=$("#repwd").val();
+								if(pwd != "" || repwd != ""){
+									if(pwd == repwd){
+										$("#alert-success").show();
+										$("#alert-danger").hide();
+										$("#submit").removeAttr("disabled");
+										}else{
+											$("#alert-success").hide();
+											$("#alert-danger").show();
+											$("#submit").attr("disabled", "disabled");
+											}
+									}
+								});
+							});							
+						</script>
 					</form>
 				</div>
 			</div>

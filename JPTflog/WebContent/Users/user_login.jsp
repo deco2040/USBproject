@@ -41,7 +41,8 @@
           </label>
         </div>
         <button id="btn-Yes" class="btn btn-lg btn-primary btn-block" type="submit">로 그 인</button>
-        <button id="btn-reg" class="btn btn-primary btn-lg" type="submit">회&nbsp;원&nbsp;가&nbsp;입</button><button id="btn-search" class="btn btn-primary btn-lg" type="submit">&nbsp;ID&nbsp;/&nbsp;PW찾기</button>
+        <input type="button" class="btn btn-lg btn-primary btn-block" value="회원가입" onclick="location.href = 'user_policy.jsp';">
+        <input type="button" class="btn btn-lg btn-primary btn-block" value="비밀번호찾기" onclick="location.href = 'user_pwsearch.jsp';">
         	
       </form>
       </center>
