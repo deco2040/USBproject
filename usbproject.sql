@@ -7,7 +7,7 @@ create table JPTquestion(
     qidx number PRIMARY KEY,
     part number not null,
     question varchar2(1000) not null,
-    choice varchar2(100),
+    choice varchar2(1000),
     answer varchar2(2) not null,
     commentary varchar2(100),
     difficulty number not null,
