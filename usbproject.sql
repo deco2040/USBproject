@@ -14,6 +14,7 @@ create table JPTquestion(
     weekpoint number not null,
     favorites number default 0,
     responses number default 0,
+    reading varchar2(50),
     CONSTRAINT FK_WEEK FOREIGN KEY(weekpoint)
     REFERENCES Week(weekID)
 );
@@ -58,11 +59,6 @@ create table JPTchoiceINFO(
     answerB number default 0,
     answerC number default 0,
     answerD number default 0,
-    incorrectA number default 0,  -- 각 항목을 선택해서 틀린 사람 수
-    incorrectB number default 0,
-    incorrectC number default 0,
-    incorrectD number default 0,
-    responses number default 0,
     CONSTRAINT FK_QIDX FOREIGN KEY(qidx) 
     REFERENCES JPTquestion(qidx)
 );
@@ -78,13 +74,13 @@ create table slovedquestion(
 );
 
 
-insert into week values(01,'어휘력');
-insert into week values(02,'숙어력');
-insert into week values(03,'속담력');
-insert into week values(04,'한자력');
-insert into week values(05,'문법력');
-insert into week values(06,'독해력');
-insert into week values(07,'정보력');
-insert into week values(08,'문장력');
+insert into week values(01,'어휘력', 'VOCA');
+insert into week values(02,'숙어력', 'IDIOM');
+insert into week values(03,'속담력', 'PROVERB');
+insert into week values(04,'한자력', 'KANJI');
+insert into week values(05,'문법력', 'GRAMMER');
+insert into week values(06,'독해력', 'READING');
+insert into week values(07,'정보력', 'INFO');
+insert into week values(08,'문장력', 'SENTENCE');
 
 
