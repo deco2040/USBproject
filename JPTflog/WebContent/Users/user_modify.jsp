@@ -22,7 +22,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
-		<title>Mypage</title>
+		<title>modify</title>
 	</head>
 	<body>
 		<div class="container">
