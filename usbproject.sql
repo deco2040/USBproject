@@ -80,8 +80,8 @@ create table memberINFO(
     email varchar2(150) UNIQUE not null,
     gender varchar2(3),
     password varchar2(30) not null,
-    address1 varchar2(100) not null,
-    address2 varchar2(100) not null,
+    address1 varchar2(500) not null,
+    address2 varchar2(500) not null,
     tel varchar2(20)
 );
 create sequence member_seq;
@@ -98,10 +98,10 @@ create table JPTchoiceINFO(
 
 create table slovedquestion(
     idx number primary key,
-    email varchar2(150) not null unique,
-    correctquestions varchar2(1000),
-    incorrectquestions varchar2(1000),
-    favorite varchar2(1000),
+    email varchar2(300) not null unique,
+    correctquestions varchar2(4000),
+    incorrectquestions varchar2(4000),
+    favorite varchar2(4000),
     CONSTRAINT FK_IDXS FOREIGN KEY(idx) 
     REFERENCES memberINFO(idx)
 );
@@ -117,3 +117,34 @@ insert into week values(07,'정보력', 'INFO');
 insert into week values(08,'문장력', 'SENTENCE');
 
 
+CREATE TABLE EXPECTATIONQUESTION (
+    PART VARCHAR2(10), 
+	QUESTION VARCHAR2(1000), 
+	CHOICE VARCHAR2(1000), 
+	ANSWER VARCHAR2(10)
+) 
+
+CREATE TABLE EXPECTTABLE(	
+    EXPECTGRADE VARCHAR2(10), 
+	Q1 VARCHAR2(20), 
+	Q2 VARCHAR2(20), 
+	Q3 VARCHAR2(20), 
+	Q4 VARCHAR2(20), 
+	Q5 VARCHAR2(20), 
+	Q6 VARCHAR2(20), 
+	Q7 VARCHAR2(20), 
+	Q8 VARCHAR2(20), 
+	Q9 VARCHAR2(20), 
+	Q10 VARCHAR2(20), 
+	Q11 VARCHAR2(20), 
+	Q12 VARCHAR2(20), 
+	Q13 VARCHAR2(20), 
+	Q14 VARCHAR2(20), 
+	Q15 VARCHAR2(20)
+   )
+   
+   
+   
+   
+   
+   
