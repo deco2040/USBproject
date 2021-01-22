@@ -46,6 +46,8 @@ public class UserLoginAction implements Action {
 		if(row == 1) {
 			
 			session.setAttribute("email",useremail);
+			session.setMaxInactiveInterval(60*60*24) ;
+
 			//dao.userLastTime(id);
 			RequestDispatcher rd = request.getRequestDispatcher("/user?cmd=home");
 			rd.forward(request, response);

@@ -108,10 +108,18 @@ a:hover {text-decoration:none;}
 			<span class=title style="float:left;">내가 취약한 문제 풀기</span>
 			
 			<c:set var="counter" value="${counter+1 }"></c:set>
+			<c:set var="part8" value="8"></c:set>
 			<c:forEach var="vo" items="${weekquestion }" varStatus="status">
 				<form name="question" id="qidx">
 					<input type="hidden" name="question${counter}" value="${vo.qidx }">
-			
+				
+						<c:if test = "${vo.part eq 8 }"> 
+							<span class="title clear" style="float: left;">
+								<img src="/part8/${vo.reading }.jpg">
+							</span>
+							<c:set var="part8" value="-1"></c:set>
+						</c:if>
+				
 			<span class="title clear" style="float: left;">난이도 
 					<c:if test ="${ vo.difficulty eq 1}"> <img width=23 height=23 src="/images/star.png"> <img width=23 height=23 src="/images/emptyStar.png"> <img width=23 height=23 src="/images/emptyStar.png"></c:if>
 					<c:if test ="${ vo.difficulty eq 2}"> <img width=23 height=23 src="/images/star.png"> <img width=23 height=23 src="/images/star.png"> <img width=23 height=23 src="/images/emptyStar.png"></c:if>
@@ -147,45 +155,6 @@ a:hover {text-decoration:none;}
 			</div>
 			</c:forEach>	
 			
-			<c:forEach var="vo" items="${reading }" varStatus="status">
-			<form name="question" id="qidx">
-				<input type="hidden" name="question${counter}" value="${vo.qidx }">
-			
-			
-				<c:if test="${counter eq 10}">
-				<span class="title clear" style="float:left;">Part ${vo.part }<br>
-				<img src="/part8/${vo.reading }.jpg"></span>
-					
-				</c:if>	
-			<div class="jb-content clear">
-				
-				<span class=title style="float: left;">
-					${counter}. ${vo.question }
-				</span>
-				
-				<span class="title clear"><input type="checkbox" name="forvite${counter}" value= "${vo.qidx }" >  / 난이도 ${vo.difficulty} / ${vo.qidx }번</span><br>
-				<div class="radio-group">
-					<label class=radio>
-						<input type="radio" name="group${counter}" value="1">${vo.choice[0]}
-						<span></span>
-					</label><br>
-					<label class=radio>
-						<input type="radio" name="group${counter}" value="2">${vo.choice[1]}
-						<span></span>
-					</label><br>
-					<label class=radio>
-						<input type="radio" name="group${counter}" value="3">${vo.choice[2]}
-						<span></span>
-					</label><br>
-					<label class=radio>
-						<input type="radio" name="group${counter}" value="4">${vo.choice[3]}
-						<span></span>
-					</label>
-				</div>
-			</div>
-			<c:set var="counter" value="${counter+1 }"></c:set>
-			</form>	
-		</c:forEach>
 	
 		</div>
 		

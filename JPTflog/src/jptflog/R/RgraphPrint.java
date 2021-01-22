@@ -103,7 +103,7 @@ public class RgraphPrint {
 			conn.parseAndEval("radarchart( data  , axistype=1 , "
 					+ " pcol='black' , pfcol=rgb(0.2,0.5,0.6,0.7) , plwd=1 , plty=1,"
 					+ " cglcol=\"grey\", cglty=1, axislabcol=\"grey\", caxislabels=seq(" + caxis + "," + maxString + "," + caxis  +"), cglwd=1,"
-					+ "vlcex=1 )");
+					+ "vlcex=1, title =\"장점 분석 \" )");
 
 			conn.parseAndEval("graphics.off();");
 			x = conn.parseAndEval("r=readBin('test.jpg','raw',1024*1024); unlink('test.jpg'); r");
@@ -170,7 +170,7 @@ public class RgraphPrint {
 			conn.parseAndEval("data$'상대도수'<-prop.table(data$\"선택한수\")");
 			
 			conn.parseAndEval("pie(data$'상대도수', labels=data$\"응답통계\")");
-			conn.parseAndEval("pie(data$'상대도수', labels=paste(data$\"응답통계\", round(data$상대도수*100,1),\"%\"))");
+			conn.parseAndEval("pie(data$'상대도수', labels=paste(data$\"응답통계\", round(data$상대도수*100,1),\"%\"), main =\"선택지 응답 통계\")");
 
 			conn.parseAndEval("graphics.off();");
 			x = conn.parseAndEval("r=readBin('test.jpg','raw',1024*1024); unlink('test.jpg'); r");
@@ -447,7 +447,7 @@ public class RgraphPrint {
 			conn.parseAndEval("data$상대도수<-prop.table(data$정도)");
 			conn.parseAndEval("pie(data$상대도수, labels=data$취약점)");
 
-			conn.parseAndEval("pie(data$상대도수, labels=paste(data$취약점, round(data$상대도수*100,1),\"%\"))");
+			conn.parseAndEval("pie(data$상대도수, labels=paste(data$취약점, round(data$상대도수*100,1),\"%\"), main =\"자주 틀린 취약점 비율\")");
 
 			conn.parseAndEval("graphics.off();");
 			x = conn.parseAndEval("r=readBin('test.jpg','raw',1024*1024); unlink('test.jpg'); r");

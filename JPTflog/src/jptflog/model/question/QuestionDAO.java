@@ -430,6 +430,9 @@ public class QuestionDAO {
 					}else {
 						incorrectHighVO.setChoice(rs2.getString("choice").split("/"));
 					}
+					if(8==rs2.getInt("part")) {
+						incorrectHighVO.setReading(rs2.getString("reading"));
+					}
 					
 					incorrectHighVO.setAnswer(rs2.getString("answer"));
 					incorrectHighVO.setDifficulty(rs2.getInt("difficulty"));
@@ -525,6 +528,9 @@ public class QuestionDAO {
 			}else {
 				weekquestion.setChoice(rs2.getString("choice").split("/"));
 			}
+			if(8==rs2.getInt("part")) {
+				weekquestion.setReading(rs2.getString("reading"));
+			}
 			
 			weekquestion.setAnswer(rs2.getString("answer"));
 			weekquestion.setDifficulty(rs2.getInt("difficulty"));
@@ -573,6 +579,9 @@ public class QuestionDAO {
 						correctQuestion.setChoice(findBracketTextByPattern(rs.getString("question")).split("/"));	
 					}else {
 						correctQuestion.setChoice(rs.getString("choice").split("/"));
+					}
+					if(8==rs.getInt("part")) {
+						correctQuestion.setReading(rs.getString("reading"));
 					}
 					
 					correctQuestion.setAnswer(rs.getString("answer"));
@@ -625,6 +634,10 @@ public class QuestionDAO {
 					}else {
 						incorrectQuestion.setChoice(rs.getString("choice").split("/"));
 					}
+					if(8==rs.getInt("part")) {
+						incorrectQuestion.setReading(rs.getString("reading"));
+					}
+					
 					
 					incorrectQuestion.setAnswer(rs.getString("answer"));
 					incorrectQuestion.setDifficulty(rs.getInt("difficulty"));

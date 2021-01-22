@@ -142,10 +142,19 @@ a:hover {
 			<span class=title style="float: left;">맞춘 문제 보기</span>
 
 			<c:set var="counter" value="${counter+1 }"></c:set>
+			<c:set var="part8" value="8"></c:set>
+			
 			<c:forEach var="vo" items="${correctQuestions }" varStatus="status">
 				<form name="question" id="qidx">
 					<input type="hidden" name="question${counter}" value="${vo.qidx }">
-
+					
+						<c:if test = "${vo.part eq 8 }"> 
+							<span class="title clear" style="float: left;">
+								<img src="/part8/${vo.reading }.jpg">
+							</span>
+							<c:set var="part8" value="-1"></c:set>
+						</c:if>
+					
 					<span class="title clear" style="float: left;">난이도 <c:if
 							test="${ vo.difficulty eq 1}">
 							<img width=23 height=23 src="/images/star.png">
@@ -159,29 +168,29 @@ a:hover {
 							<img width=23 height=23 src="/images/star.png">
 							<img width=23 height=23 src="/images/star.png">
 							<img width=23 height=23 src="/images/star.png">
-						</c:if> <br> Part ${vo.part }
+						</c:if> <br> Part ${vo.part } / ${vo.reading }
 					</span>
 
 					<div class="jb-content clear">
 						<span class=title style="float: left;"> ${counter}.
 							${vo.question } </span> <span class="title clear"><input
-							type="checkbox" name="forvite${counter}" value="${vo.qidx }"
+							type="checkbox" name="forvite${counter}" value="${vo.qidx }" onclick = "return false;"
 							<c:if test = "${favoriteSet.contains(vo.qidx) }"> checked</c:if>></span><br>
 						<div class="radio-group">
 							<label class=radio> <input type="radio"
-								name="group${counter}" value="1"
+								name="group${counter}" value="1" onclick = "return false;"
 								<c:if test = "${vo.answer eq 'a' }"> checked</c:if>>1.
 								${vo.choice[0]} <span></span>
 							</label><br> <label class=radio> <input type="radio"
-								name="group${counter}" value="2"
+								name="group${counter}" value="2" onclick = "return false;"
 								<c:if test = "${vo.answer eq 'b' }"> checked</c:if>>2
 								.${vo.choice[1]} <span></span>
 							</label><br> <label class=radio> <input type="radio"
-								name="group${counter}" value="3"
+								name="group${counter}" value="3" onclick = "return false;"
 								<c:if test = "${vo.answer eq 'c' }"> checked</c:if>>3
 								.${vo.choice[2]} <span></span>
 							</label><br> <label class=radio> <input type="radio"
-								name="group${counter}" value="4"
+								name="group${counter}" value="4" onclick = "return false;"
 								<c:if test = "${vo.answer eq 'd' }"> checked</c:if>>4
 								.${vo.choice[3]} <span></span>
 							</label>
@@ -210,54 +219,10 @@ a:hover {
 	</div>
 	</c:forEach>
 
-	<c:forEach var="vo" items="${reading }" varStatus="status">
-		<form name="question" id="qidx">
-			<input type="hidden" name="question${counter}" value="${vo.qidx }">
-
-
-			<c:if test="${counter eq 10}">
-				<span class="title clear" style="float: left;">Part ${vo.part }<br>
-					<img src="/part8/${vo.reading }.jpg"></span>
-
-			</c:if>
-			<div class="jb-content clear">
-				<span class="title clear" style="float: left;">난이도 <c:if
-						test="${ vo.difficulty eq 1}">
-						<img width=23 height=23 src="/images/star.png">
-						<img width=23 height=23 src="/images/emptyStar.png">
-						<img width=23 height=23 src="/images/emptyStar.png">
-					</c:if> <c:if test="${ vo.difficulty eq 2}">
-						<img width=23 height=23 src="/images/star.png">
-						<img width=23 height=23 src="/images/star.png">
-						<img width=23 height=23 src="/images/emptyStar.png">
-					</c:if> <c:if test="${ vo.difficulty eq 3}">
-						<img width=23 height=23 src="/images/star.png">
-						<img width=23 height=23 src="/images/star.png">
-						<img width=23 height=23 src="/images/star.png">
-					</c:if>
-				</span> <br> <span class=title style="float: left;">
-					${counter}. ${vo.question } </span> <span class="title clear"><input
-					type="checkbox" name="forvite${counter}" value="${vo.qidx }">
-				</span><br>
-				<div class="radio-group">
-					<label class=radio> <input type="radio"
-						name="group${counter}" value="1">${vo.choice[0]} <span></span>
-					</label><br> <label class=radio> <input type="radio"
-						name="group${counter}" value="2">${vo.choice[1]} <span></span>
-					</label><br> <label class=radio> <input type="radio"
-						name="group${counter}" value="3">${vo.choice[2]} <span></span>
-					</label><br> <label class=radio> <input type="radio"
-						name="group${counter}" value="4">${vo.choice[3]} <span></span>
-					</label>
-				</div>
-			</div>
-			<c:set var="counter" value="${counter+1 }"></c:set>
-		</form>
-	</c:forEach>
-
+	
+		</div>
 	</div>
-
-	</div>
+	
 	<div id=RightBottomLayerFixed>
 		<input class="btnc" type="button" value="취소"
 			onclick="window.history.back()">

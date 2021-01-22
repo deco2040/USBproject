@@ -1,0 +1,12 @@
+install.packages("Rserve");
+install.packages("fmsb")
+install.packages("ggplot2")
+install.packages("Rcpp")
+install.packages('patchwork')
+
+install.packages("Rserve");
+library(Rserve)
+Rserve(FALSE,port=6311,args='--RS-encoding utf8 --no-save --slave --encoding utf8  --internet2')
+Rserve(args="--RS- encoding utf8")
+
+
