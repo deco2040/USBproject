@@ -1,0 +1,242 @@
+#cssmenu {
+  border: none;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  width: auto;
+}
+#cssmenu ul {
+  background: #151515;
+  height: 70px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cssmenu li {
+  float: left;
+  padding: 0px;
+}
+#cssmenu li bb {
+  float: right;
+}
+#cssmenu li a {
+  background: #151515 url("images/seperator.gif") bottom right no-repeat;
+  display: block;
+  font-weight: normal;
+  line-height: 70px;
+  margin: 0px;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+#cssmenu li v {
+	display: block;
+  font-weight: normal;
+  line-height: 70px;
+  margin: 0px;
+  padding: 0px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+#cssmenu > ul > li > a {
+  color: #cccccc;
+}
+#cssmenu ul ul a {
+  color: #cccccc;
+}
+#cssmenu li > a:hover,
+#cssmenu ul li:hover > a {
+  background: #BDBDBD url("/images/hover.png") bottom center no-repeat;
+  color: #ffffff;
+  text-decoration: none;
+}
+#cssmenu li ul {
+  background: #151515;
+  display: none;
+  height: auto;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  position: absolute;
+  width: 130px;
+  z-index: 200;
+  /*top:1em;
+	/*left:0;*/
+
+}
+#cssmenu li:hover ul {
+  display: block;
+}
+#cssmenu li li {
+  background: url('/images/sub_sep.gif') bottom left no-repeat;
+  display: block;
+  float: none;
+  margin: 0px;
+  padding: 0px;
+  width: 130px;
+}
+#cssmenu li:hover li a {
+  background: none;
+}
+#cssmenu li ul a {
+  display: block;
+  height: auto;
+  font-size: 17px;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px 10px 0px 15px;
+  text-align: center;
+}
+#cssmenu li ul a:hover,
+#cssmenu li ul li:hover > a {
+  background: #BDBDBD url('/images/hover_sub.png') center left no-repeat;
+  border: 0px;
+  color: #ffffff;
+  text-decoration: none;
+}
+#cssmenu p {
+  clear: left;
+}
+#cssmenu ul ul li {
+  position: relative;
+}
+#cssmenu ul ul ul {
+  left: -9999px;
+  top: 0;
+}
+#cssmenu ul ul li:hover > ul {
+  left: 100%;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-center > ul {
+  text-align: center;
+}
+#cssmenu > ul > li {
+  position: relative;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li:hover > ul {
+  right: 0;
+  left: auto;
+  text-align: right;
+}
+#cssmenu.align-right ul ul li a {
+  text-align: right;
+}
+#cssmenu.align-right ul ul li:hover > ul {
+  left: auto;
+  right: 100%;
+}
+
+#jb-container {
+	width: 940px;
+	margin: 10px auto;
+	padding: 20px;
+}
+
+#jb-header {
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+#jb-content {
+	display: block;
+	width: 580px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left;
+}
+
+#jb-sidebar {
+	width: 260px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: right;
+}
+
+#jb-footer {
+	clear: both;
+	padding: 20px;
+}
+
+@media ( max-width : 480px ) {
+	#jb-container {
+		width: auto;
+	}
+	#jb-content {
+		float: none;
+		width: auto;
+	}
+	#jb-sidebar {
+		float: none;
+		width: auto;
+	}
+}
+
+.today-learning {
+	position: relative;
+	width: 100%;
+	padding: 80px 0px 0px;
+	background: rgb(4, 4, 4);
+}
+
+.card-wrapper {
+	display: flex;
+	color: rgb(221, 221, 221);
+	flex-wrap: wrap;
+	max-width: 1120px;
+	margin: 0px auto;
+}
+
+.card {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1120px;
+	margin: 16px auto;
+}
+
+
+.title {
+	margin-right: 10px;
+	color: rgb(221, 221, 221);
+	line-height: 48px;
+	font-weight: 600;
+}
+.bun {
+	margin-right: 10px;
+	color: rgb(221, 221, 221);
+	line-height: 48px;
+	font-weight: 600;
+	
+}
+
+.score {
+	font-weight: 600;
+}
+
+@media ( max-width : 767px) .score {
+	margin
+	:0px 0px 13px;
+	
+	font-size
+	:30px;
+    
+	line-height
+	: 52px;
+}
+
+.score {
+	margin: 0px 0px 26px;
+	color: rgb(255, 255, 255);
+	font-size: 40px;
+	font-weight: 300;
+	line-height: 66px;
+}
