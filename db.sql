@@ -1,5 +1,4 @@
- 
--- 유저생성은 관리자 계정에서 실행 할 것!!
+ -- 유저생성은 관리자 계정에서 실행 할 것!!
 create user usbproject IDENTIFIED by 1234;
 grant connect,dba,resource to usbproject;
 
@@ -148,16 +147,3 @@ CREATE TABLE EXPECTTABLE(
    
    
    
-   
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
