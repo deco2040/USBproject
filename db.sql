@@ -23,7 +23,7 @@ create sequence jpt_qidx_seq;
 create table Week(
     weekID number PRIMARY KEY,
     weekpoint varchar2(20) not null
-    engname varchar2(20)
+    weekname varchar2(20)
 );
 
 create table MemberWeekINFO(
