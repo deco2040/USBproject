@@ -93,6 +93,7 @@ create table JPTchoiceINFO(
     answerB number default 0,
     answerC number default 0,
     answerD number default 0,
+    RESPONSES number default 0,
     CONSTRAINT FK_QIDX FOREIGN KEY(qidx) 
     REFERENCES JPTquestion(qidx)
 );
