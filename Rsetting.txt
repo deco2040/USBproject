@@ -3,6 +3,7 @@ install.packages("fmsb")
 install.packages("ggplot2")
 install.packages("Rcpp")
 install.packages('patchwork')
+install.packages('ggrepel')
 
 install.packages("Rserve");
 library(Rserve)
