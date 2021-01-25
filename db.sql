@@ -80,7 +80,7 @@ create table memberINFO(
     idx number PRIMARY KEY,
     email varchar2(150) UNIQUE not null,
     gender varchar2(3),
-    password varchar2(30) not null,
+    password varchar2(200) not null,
     address1 varchar2(500) not null,
     address2 varchar2(500) not null,
     tel varchar2(20)
