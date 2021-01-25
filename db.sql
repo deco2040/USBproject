@@ -23,6 +23,7 @@ create sequence jpt_qidx_seq;
 create table Week(
     weekID number PRIMARY KEY,
     weekpoint varchar2(20) not null
+    engname varchar2(20)
 );
 
 create table MemberWeekINFO(
@@ -122,7 +123,7 @@ CREATE TABLE EXPECTATIONQUESTION (
 	QUESTION VARCHAR2(1000), 
 	CHOICE VARCHAR2(1000), 
 	ANSWER VARCHAR2(10)
-) 
+);
 
 CREATE TABLE EXPECTTABLE(	
     EXPECTGRADE VARCHAR2(10), 
@@ -141,7 +142,7 @@ CREATE TABLE EXPECTTABLE(
 	Q13 VARCHAR2(20), 
 	Q14 VARCHAR2(20), 
 	Q15 VARCHAR2(20)
-   )
+   );
    
    
    
