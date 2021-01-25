@@ -1,34 +1,4 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
  
-@deco2040 
-deco2040
-/
-USBproject
-1
-13
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-USBproject/usbproject.sql
-@deco2040
-deco2040 Update usbproject.sql
-Latest commit fecb5fa 5 hours ago
- History
- 1 contributor
-150 lines (128 sloc)  3.44 KB
-  
 -- 유저생성은 관리자 계정에서 실행 할 것!!
 create user usbproject IDENTIFIED by 1234;
 grant connect,dba,resource to usbproject;
